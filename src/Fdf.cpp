@@ -27,13 +27,44 @@ void Fdf::start(const std::string &map)
             break;
         }
 
-        if (m_input[SDLK_KP_PLUS]) {
+        if (m_input[SDLK_KP_PLUS])
+        {
             m_scale += SCALE_PITCH;
         }
 
         if (m_input[SDLK_KP_MINUS] && (m_scale - SCALE_PITCH) >= 0)
         {
             m_scale -= SCALE_PITCH;
+        }
+
+        if (m_input[SDLK_PAGEUP])
+        {
+            m_heightScale += HEIGHT_SCALE_PITCH;
+        }
+
+        if (m_input[SDLK_PAGEDOWN])
+        {
+            m_heightScale -= HEIGHT_SCALE_PITCH;
+        }
+
+        if (m_input[SDLK_UP])
+        {
+            m_offsetY += OFFSET_PITCH;
+        }
+
+        if (m_input[SDLK_DOWN])
+        {
+            m_offsetY -= OFFSET_PITCH;
+        }
+
+        if (m_input[SDLK_LEFT])
+        {
+            m_offsetX += OFFSET_PITCH;
+        }
+
+        if (m_input[SDLK_RIGHT])
+        {
+            m_offsetX -= OFFSET_PITCH;
         }
 
         m_window.flush();
@@ -46,8 +77,8 @@ void Fdf::start(const std::string &map)
                 int height = mapContent[x][y];
                 int prevHeight = 0;
 
-                int pointX = baseX + (x * m_scale);
-                int pointY = (y * m_scale) - (height * 10);
+                int pointX = m_offsetX + baseX + (x * m_scale);
+                int pointY = m_offsetY + ((y * m_scale) - (height * m_heightScale));
 
                 int prevX;
                 int prevY;
@@ -63,7 +94,7 @@ void Fdf::start(const std::string &map)
                 {
                     prevHeight = mapContent[x - 1][y];
                     prevX = (pointX - m_scale);
-                    prevY = (y * m_scale) - (prevHeight * 10);
+                    prevY = m_offsetY + ((y * m_scale) - (prevHeight * m_heightScale));
 
                     m_window.drawLine(prevX, prevY, pointX, pointY);
                 }
@@ -71,8 +102,8 @@ void Fdf::start(const std::string &map)
                 if (y > 0)
                 {
                     prevHeight = mapContent[x][y - 1];
-                    prevX = ((10 - (y - 1)) * (m_scale / 2)) + (x * m_scale);
-                    prevY = ((y - 1) * m_scale) - (prevHeight * 10);
+                    prevX = m_offsetX + ((10 - (y - 1)) * (m_scale / 2)) + (x * m_scale);
+                    prevY = m_offsetY + (((y - 1) * m_scale) - (prevHeight * m_heightScale));
 
                     m_window.drawLine(prevX, prevY, pointX, pointY);
                 }

@@ -2,7 +2,12 @@
 #define _FDF_HPP_
 
 #define DEFAULT_SCALE 40
-#define SCALE_PITCH 5
+#define SCALE_PITCH 1
+
+#define DEFAULT_HEIGHT_SCALE 3
+#define HEIGHT_SCALE_PITCH 1
+
+#define OFFSET_PITCH 5
 
 #include <string>
 #include "Window.hpp"
@@ -17,6 +22,9 @@ private:
     Input m_input;
 
     int m_scale = DEFAULT_SCALE;
+    int m_heightScale = DEFAULT_HEIGHT_SCALE;
+    int m_offsetX = 0;
+    int m_offsetY = 50;
 
 public:
     Fdf();

@@ -14,3 +14,5 @@ fdf: 	src/main.cpp \
 
 clean:
 	rm $(TARGETS)
+
+re: clean fdf
