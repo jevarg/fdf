@@ -1,6 +1,6 @@
 # FDF
 
-Quick (re)make of Epitech's FDF project using C++11
+Quick (& dirty) remake of Epitech's FDF project using C++11
 
 ## Usage
 ```bash
