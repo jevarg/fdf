@@ -13,7 +13,7 @@ public:
     Map();
     ~Map();
 
-    const bool loadMap(const std::string &path);
+    bool loadMap(const std::string &path);
     const std::vector<std::vector<int>> &getMap();
 };
 

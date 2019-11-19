@@ -83,13 +83,6 @@ void Fdf::start(const std::string &map)
                 int prevX;
                 int prevY;
 
-                SDL_Color color{255, 255, 255, SDL_ALPHA_OPAQUE};
-                if (height > 0)
-                {
-                    color.g = 0;
-                    color.b = 0;
-                }
-
                 if (x > 0)
                 {
                     prevHeight = mapContent[x - 1][y];

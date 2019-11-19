@@ -10,7 +10,7 @@ Map::~Map()
 {
 }
 
-const bool Map::loadMap(const std::string &path)
+bool Map::loadMap(const std::string &path)
 {
     m_filePath = path;
     std::ifstream inFile(m_filePath);
