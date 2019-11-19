@@ -1,6 +1,6 @@
 TARGETS = 	fdf
 CC		= 	g++
-CFLAGS 	= 	-g -Wall
+CFLAGS 	= 	-g -Werror -Wall -Wextra -Wpedantic -Wshadow
 LDFLAGS = 	-lSDL2
 INCDIR	=	inc/
 
