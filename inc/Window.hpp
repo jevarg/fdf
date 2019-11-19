@@ -1,5 +1,4 @@
-#ifndef _WINDOW_HPP_
-#define _WINDOW_HPP_
+#pragma once
 
 #include <SDL2/SDL.h>
 
@@ -33,4 +32,3 @@ public:
     const int &getHeight();
 };
 
-#endif // _WINDOW_HPP_

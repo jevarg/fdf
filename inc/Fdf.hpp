@@ -1,5 +1,4 @@
-#ifndef _FDF_HPP_
-#define _FDF_HPP_
+#pragma once
 
 #define DEFAULT_SCALE 40
 #define SCALE_PITCH 1
@@ -34,4 +33,3 @@ public:
     void stop();
 };
 
-#endif // _FDF_HPP_

@@ -1,5 +1,4 @@
-#ifndef _MAP_HPP_
-#define _MAP_HPP_
+#pragma once
 
 #include <string>
 #include <vector>
@@ -18,5 +17,3 @@ public:
     const std::vector<std::vector<int>> &getMap();
 };
 
-
-#endif // _MAP_HPP_
