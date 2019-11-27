@@ -1,5 +1,4 @@
-#ifndef _MAP_HPP_
-#define _MAP_HPP_
+#pragma once
 
 #include <string>
 #include <vector>
@@ -14,9 +13,7 @@ public:
     Map();
     ~Map();
 
-    const bool loadMap(const std::string &path);
+    bool loadMap(const std::string &path);
     const std::vector<std::vector<int>> &getMap();
 };
 
-
-#endif // _MAP_HPP_

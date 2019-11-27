@@ -1,5 +1,4 @@
-#ifndef _INPUT_HPP_
-#define _INPUT_HPP_
+#pragma once
 
 #include <list>
 #include <SDL2/SDL_events.h>
@@ -19,4 +18,3 @@ public:
     bool operator[](const SDL_Keycode &key);
 };
 
-#endif // _INPUT_HPP_
